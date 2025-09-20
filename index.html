@@ -414,13 +414,16 @@
             function animate() { requestAnimationFrame(animate); ctx.clearRect(0,0,innerWidth,innerHeight); for(let i=0; i<particlesArray.length; i++){ particlesArray[i].update(); } connect(); }
             init(); animate();
             
+            
             // --- DOWNLOAD BUTTON FUNCTIONALITY ---
             const downloadHandler = (e) => {
                 e.preventDefault();
-                alert('Download will be available soon!');
+                // This link will prompt a Tampermonkey installation.
+                window.location.href = 'https://github.com/Partypixelparty77/Clarium/raw/refs/heads/main/clarium.user.js';
             };
             document.getElementById('downloadBtn').addEventListener('click', downloadHandler);
             document.getElementById('downloadBtn2').addEventListener('click', downloadHandler);
+
 
             // --- ANIMATE ON SCROLL (INTERSECTION OBSERVER) ---
             const animatedElements = document.querySelectorAll('[data-aos]');
